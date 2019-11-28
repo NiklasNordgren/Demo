@@ -35,13 +35,14 @@ dependencies {
     }
     compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
 	compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.2.2.RELEASE'
-    
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.18'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.1.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }

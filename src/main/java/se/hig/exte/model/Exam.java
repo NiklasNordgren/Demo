@@ -3,6 +3,7 @@ package se.hig.exte.model;
 import java.net.URL;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +18,12 @@ public class Exam {
 	 */
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
+	private int id;
+	/*
+	 * @Column is only used if the name of the column in the SQL Table differs from the
+	 * instance variable name.
+	 */
+	@Column(name = "Name")
 	private String name;
 	private LocalDate date;
 	private URL pdfSource; /* 
@@ -37,7 +43,7 @@ public class Exam {
 		this.pdfSource = pdfSource;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 

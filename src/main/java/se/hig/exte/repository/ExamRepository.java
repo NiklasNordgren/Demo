@@ -3,9 +3,12 @@ package se.hig.exte.repository;
 import java.util.List;
 
 import se.hig.exte.model.Exam;
-import org.springframework.data.repository.CrudRepository;
 
-public interface ExamRepository extends CrudRepository<Exam, Long>{
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ExamRepository extends JpaRepository<Exam, Integer>{
 
 	/*
 	 * The Repository interface is the Spring equivalent of DAO classes.
@@ -13,5 +16,5 @@ public interface ExamRepository extends CrudRepository<Exam, Long>{
 	
 	List<Exam> findByName(String name);
 	
-	Exam findById(long id);
+	Exam findById(int id);
 }
