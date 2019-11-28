@@ -1,4 +1,4 @@
-package com.example.demo;
+package se.hig.exte.service;
 
 import java.io.IOException;
 import java.nio.file.Files;
