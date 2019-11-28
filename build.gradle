@@ -28,14 +28,20 @@ repositories {
 }
 
 dependencies {
+	compile group: 'javax.persistence', name: 'persistence-api', version: '1.0'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}") {
     	exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
     }
     compile("org.springframework.boot:spring-boot-starter-jetty:${springBootVersion}")
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	runtimeOnly 'com.h2database:h2'
+	runtimeOnly 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.2.1.RELEASE'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
 test {
