@@ -4,15 +4,19 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import se.hig.exte.model.Exam;
+import se.hig.exte.model.Course;
 
-public interface ExamRepository extends JpaRepository<Exam, Integer>{
+public interface CourseRepository extends JpaRepository<Course, Integer>{
 
 	/*
 	 * The Repository interface is the Spring equivalent of DAO classes.
 	 */
 	
-	List<Exam> findByName(String name);
+	List<Course> findByName(String name);
 	
-	Exam findById(int id);
+	Course findById(int id);
+	
+		
+	
+	
 }
