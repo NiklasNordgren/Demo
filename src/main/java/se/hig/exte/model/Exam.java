@@ -1,5 +1,8 @@
 package se.hig.exte.model;
-
+/**
+ * This is a model class representing an Exam at University of Gefle.
+ * It contains an id, name, date and a URL for the pdf source. 
+ */
 import java.net.URL;
 import java.time.LocalDate;
 
